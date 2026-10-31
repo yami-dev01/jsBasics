@@ -18,6 +18,14 @@ function guessingGame(){
             userChoice = prompt("previous guess was smaller guess again");
         }
         
+        // if user doent enter an number
+        userChoice = Number(userChoice);
+        if(!Number.isInteger(userChoice)){
+            alert("enter a valid no");
+            prevGuess = -1;
+            continue
+        }
+        
         
 
         if(userChoice == actualNo){
@@ -32,9 +40,6 @@ function guessingGame(){
             continue;
         }
     }
-
-    
-    
 
 
 }
