@@ -21,6 +21,9 @@ let student = {
     }
 }
 
+// this will stop me from making any changes to object but it is shallow i can still change address
+
+//student = Object.freeze(student)    
 
 console.log(student.averageGrade());
 
