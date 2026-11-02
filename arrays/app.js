@@ -23,7 +23,7 @@ const departments = [
 
 
 //T-021: Can you filter employees who work in the "Engineering" department?
-let engineeringEmployees = employees.filter((employee) => {
+const engineeringEmployees = employees.filter((employee) => {
     if(employee.departmentId === 2){
         return employee
     }
@@ -33,7 +33,7 @@ let engineeringEmployees = employees.filter((employee) => {
 
 
 //T-022: Create a new array that combines employee names and department names in the format: "Alice (HR)".
-let combineNames = employees.map((employee) => {
+const combineNames = employees.map((employee) => {
     if(employee.id == 1){
         employee.name = `${employee.name} (HR)`;
     }
@@ -52,7 +52,7 @@ let combineNames = employees.map((employee) => {
 
 
 //T-023: Find the highest salary among employees.
-let highestSalary = employees.reduce((acc , employee) =>{
+const highestSalary = employees.reduce((acc , employee) =>{
 
     acc = Math.max(acc , employee.salary);
     return acc
@@ -62,7 +62,7 @@ let highestSalary = employees.reduce((acc , employee) =>{
 
 
 //T-024: Check if there is at least one employee in the "Sales" department.
-let salesEmployee = employees.reduce((acc , employee) => {
+const salesEmployee = employees.reduce((acc , employee) => {
     let isSalesEmployee = employee.departmentId === 4 ? true : false;
 
     acc = acc || isSalesEmployee;
@@ -73,7 +73,7 @@ let salesEmployee = employees.reduce((acc , employee) => {
 
 
 //T-025: Write a function to filter employees earning more than 6000.
-let largeSalary = (employees) => {
+const largeSalary = (employees) => {
     let targetSalary = employees.filter((employee) => {
         return employee.salary > 6000 ? employee : null;
     })
@@ -86,7 +86,7 @@ let targetSalary = largeSalary(employees);
 
 
 // T-026: Create an array of employee names only.
-let employeeNames = employees.map((employee) => {
+const employeeNames = employees.map((employee) => {
     return employee.name
 })
 
@@ -95,7 +95,7 @@ let employeeNames = employees.map((employee) => {
 
 
 //T-027: Calculate the total salary of all employees using
-let totalSalary = employees.reduce((acc , employee) => {
+const totalSalary = employees.reduce((acc , employee) => {
     acc += employee.salary;
     return acc
 } , 0);
@@ -105,7 +105,7 @@ let totalSalary = employees.reduce((acc , employee) => {
 
 
 //T-029: Find the first employee who earns exactly 5100.
-let employeeWithTargetSalary = employees.reduce((acc , employee) => {
+const employeeWithTargetSalary = employees.reduce((acc , employee) => {
     if(acc.length == 0 && employee.salary == 5100){
         acc = employee.name
     }
@@ -123,26 +123,26 @@ for(let employee of employees){
 
 
 //T-062: Extract extract [‘b’, ‘c’, ‘d’] using slice() from this array: ['a', 'b', 'c', 'd', 'e']
-let arr = ['a', 'b', 'c', 'd', 'e'];
+const arr = ['a', 'b', 'c', 'd', 'e'];
 
-let newArr = arr.splice(1 , 3);
+const newArr = arr.splice(1 , 3);
 //console.log(newArr);
 //console.log(arr);
 
 
 // T-063: Sort the array [9, 3, 1, 6, 8] in ascending order using toSorted()
-let nums = [9, 3, 1, 6, 8];
-let ascendingSorted = nums.toSorted();
+const nums = [9, 3, 1, 6, 8];
+const ascendingSorted = nums.toSorted();
 //console.log(ascendingSorted)
 
 
 
 //T-064: Reverse [1, 2, 3, 4, 5] using toReversed() and compare it with reverse()
-let orignalNums = [1, 2, 3, 4, 5];
+const orignalNums = [1, 2, 3, 4, 5];
 
-let reversedNums = orignalNums.toReversed(); // returns new array
-let rNums = orignalNums.reverse(); // mutate the orignal one
+const numsToReversed = orignalNums.toReversed(); // returns new array
+const numsReverse = orignalNums.reverse(); // mutate the orignal one
 
-//console.log(reversedNums === orignalNums);
-//console.log(rNums === orignalNums)
+//console.log(numsToReversed === orignalNums);
+//console.log(numsReverse === orignalNums)
 
