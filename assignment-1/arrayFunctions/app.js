@@ -2,36 +2,36 @@
 function CustomArray(arr){
     this.arr = arr
 
-    this.reduce = function(fn , acc){
+    this.reduce = function(callback , acc){
         this.arr.forEach(element => {
-            acc = fn(element , acc);
+            acc = callback(element , acc);
         });
         return acc;
     };
 
-    this.filter = function(fn){
-        const modifiedArray = [];
+    this.filter = function(callback){
+        const result = [];
         for(let i =0 ; i<this.arr.length ; i++){
-            const toBeAdded = fn(this.arr[i]);
+            const toBeAdded = callback(this.arr[i]);
             if(toBeAdded){
-                modifiedArray.push(this.arr[i]);
+                result.push(this.arr[i]);
             } 
         }
-        return modifiedArray
+        return result
     }
 
-    this.map = function(fn){
-        const modifiedArray = [];
+    this.map = function(callback){
+        const result = [];
         for(let i =0; i<this.arr.length ; i++){
-            const valueToBeAdded = fn(this.arr[i]);
-            modifiedArray.push(valueToBeAdded);
+            const valueToBeAdded = callback(this.arr[i]);
+            result.push(valueToBeAdded);
         }
-        return modifiedArray
+        return result
     }
 
-    this.forEach = function(fn){
+    this.forEach = function(callback){
         for(let i = 0; i<this.arr.length ; i++){
-            fn(this.arr[i]);
+            callback(this.arr[i]);
         }
     }
 }
@@ -61,7 +61,7 @@ console.log(ans);
 const filteredArray = customArray.filter((elem) =>{
     if(elem > 2) return 1;
 })
-console.log(newArr);
+console.log(filteredArray);
 
 
 
